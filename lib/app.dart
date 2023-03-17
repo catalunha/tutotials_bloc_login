@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:user_repository/user_repository.dart';
 import 'package:tutorials_bloc_login/authentication/bloc/authentication_bloc.dart';
-import 'package:tutorials_bloc_login/splash/view/splash_page.dart';
 
 import 'home/home_page.dart';
 import 'login/login_page.dart';
+import 'splash/view/splash_page.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -18,6 +18,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   late final AuthenticationRepository _authenticationRepository;
   late final UserRepository _userRepository;
+
   @override
   void initState() {
     super.initState();
@@ -77,6 +78,7 @@ class _AppViewState extends State<AppView> {
         );
       },
       onGenerateRoute: (_) => SplashPage.route(),
+      // routes: {'/': (_) => SplashPage.route()},
     );
   }
 }
