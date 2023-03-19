@@ -26,12 +26,19 @@ class HomePage extends StatelessWidget {
                   builder: (context, id) => Text('id: $id'));
             }),
             ElevatedButton(
-                onPressed: () {
-                  context
-                      .read<AuthenticationBloc>()
-                      .add(AuthenticationEventLogoutRequested());
-                },
-                child: const Text('Logout'))
+              onPressed: () {
+                context
+                    .read<AuthenticationBloc>()
+                    .add(AuthenticationEventLogoutRequested());
+              },
+              child: const Text('Logout'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/second_page');
+              },
+              child: const Text('Go Second Page'),
+            )
           ],
         ),
       ),

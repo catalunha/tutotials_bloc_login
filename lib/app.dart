@@ -6,6 +6,7 @@ import 'package:tutorials_bloc_login/authentication/bloc/authentication_bloc.dar
 
 import 'home/home_page.dart';
 import 'login/login_page.dart';
+import 'second_page/second_page.dart';
 import 'splash/view/splash_page.dart';
 
 class App extends StatefulWidget {
@@ -77,8 +78,11 @@ class _AppViewState extends State<AppView> {
           child: child,
         );
       },
-      onGenerateRoute: (_) => SplashPage.route(),
-      // routes: {'/': (_) => SplashPage.route()},
+      // onGenerateRoute: (_) => SplashPage.route(),
+      routes: {
+        '/': (_) => const SplashPage(),
+        '/second_page': (_) => const SecondPage(),
+      },
     );
   }
 }
